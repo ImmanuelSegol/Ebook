@@ -1,0 +1,2 @@
+//Editor
+export const TOGGLE_SIDEBAR_EDITOR = 'TOGGLE_SIDEBAR_EDITOR'; 
