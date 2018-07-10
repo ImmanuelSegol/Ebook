@@ -22,9 +22,10 @@ const login = {
         margin:30,
     },
     zone:{
+        flex: 1,
         margin: 50,
         flexDirection: 'column',
-        justifyContent: 'center',
+        justifyContent: 'space-between',
     }
 }
 
@@ -37,15 +38,16 @@ export default function Login() {
                     <Text style={login.titleText}>ברוכים הבאים</Text>
                 </View>
                 <View style={login.zone} color='none'>
-                <FormControl style={{margin:10}}>
-                        <InputLabel htmlFor="name-simple">מספפר אישי</InputLabel>
-                        <Input id="name-simple" value={'name'} onChange={() => alert('change')} />
-                </FormControl>
-                <FormControl style={{margin:10}}>
-                        <InputLabel htmlFor="name-simple">סיסמא</InputLabel>
-                        <Input id="name-simple" value={'***'} onChange={() => alert('change')} />
-                </FormControl>
-                <Button variant="contained" style={{backgroundColor:'#38006b',color:'#fff',}}>כנס</Button>
+                    <FormControl style={{}}>
+                            <InputLabel htmlFor="name-simple">מספפר אישי</InputLabel>
+                            <Input id="name-simple" value={'name'} onChange={() => alert('change')} />
+                    </FormControl>
+                    <FormControl style={{}}>
+                            <InputLabel htmlFor="name-simple">סיסמא</InputLabel>
+                            <Input id="name-simple" value={'*****'} onChange={() => alert('change')} />
+                    </FormControl>
+                    <Button variant="contained" style={{backgroundColor:'#38006b',color:'#fff',}}>כנס</Button>
+                    <Text style={{color:'black', textAlign: 'center', fontSize:'16px'}}><a href="#0">שכחתי סיסמא</a></Text>
                 </View>
             </View>
         </View>

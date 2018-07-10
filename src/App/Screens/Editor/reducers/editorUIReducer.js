@@ -3,7 +3,7 @@ const initalState = {
     sideBarIsVisibal: true,
 }
 
-export default function editorUI(state = initalState,action){
+export default function editorUIReducer(state = initalState,action){
     switch(action.type){
         case actionTypes.TOGGLE_SIDEBAR_EDITOR:
             return {

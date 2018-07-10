@@ -1,2 +1,4 @@
 //Editor
 export const TOGGLE_SIDEBAR_EDITOR = 'TOGGLE_SIDEBAR_EDITOR'; 
+//Catalog
+export const TOGGLE_TAB_VIEWS = 'TOGGLE_TAB_VIEWS';
