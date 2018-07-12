@@ -17,6 +17,11 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
 
+//Test
+import SubCard from '../SubCard';
+import {Vrlogo,threeSixlogo,Pdflogo} from '../../../../img';  
+
+
 const styles = theme => ({
   card: {
     maxWidth: 400,
@@ -102,27 +107,9 @@ class RecipeReviewCard extends React.Component {
           </CardActions>
           <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
             <CardContent>
-              <Typography paragraph variant="body2">
-                פירוט
-              </Typography>
-              <Typography paragraph>
-              פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט 
-              פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט 
-              פירוט פירוט פירוט
-              </Typography>
-              <Typography paragraph>
-              פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט 
-              פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט 
-              פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט 
-              </Typography>
-              <Typography paragraph>
-              פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט 
-              פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט 
-              פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט 
-              </Typography>
-              <Typography>
-              פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט פירוט 
-              </Typography>
+                <SubCard image={Vrlogo}/>
+                <SubCard image={threeSixlogo}/>
+                <SubCard image={Pdflogo}/>
             </CardContent>
           </Collapse>
         </Card>

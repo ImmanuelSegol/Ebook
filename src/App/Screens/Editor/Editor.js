@@ -20,6 +20,7 @@ export default function Editor({showSidebar,toggleSideBar}){
                 <View style={styles.editZone}>
                     <Preview>
                     <object style={{flex:1}} type="text/html" data="https://aframe.glitch.me/" ></object>
+                    <object style={{flex:2}} type="text/html" data="https://aframe.io/examples/showcase/videosphere/" ></object>
                     </Preview>
                     <Sidebar>
                         <RecipeReviewCard/>
