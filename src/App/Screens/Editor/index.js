@@ -1,25 +1,18 @@
 import React from 'react';
-import View from '../../../Primitives/View';
-import Taskbar from './Taskbar';
-import Sidebar from './Sidebar';
-import Preview from './Preview';
-import RecipeReviewCard from './SidebarCard';
-import styles from './style';
+import * as editorActions from './actions';
+import {connect} from 'react-redux';
 
-export default function Editor(){
-    return(
-        <View style={styles.root} color='none'>
-            <Taskbar/>
-                <View style={styles.editZone}>
-                    <Preview>
-                    <object style={{flex:1}} type="text/html" data="https://aframe.glitch.me/" ></object>
-                    </Preview>
-                    <Sidebar>
-                        <RecipeReviewCard/>
-                        <RecipeReviewCard/>
-                        <RecipeReviewCard/>
-                    </Sidebar>
-                </View>
-        </View>
-    )
-}
+import Editor from './Editor';
+
+const mapStateToProps = state => (
+    {
+        showSidebar: state.editorUi.sideBarIsVisibal,
+    }
+) 
+const mapDispatchToProps = dispatch => (
+    {
+        toggleSideBar: () => dispatch(editorActions.cntrlSideBar()),
+    }
+) 
+
+export default connect(mapStateToProps,mapDispatchToProps)(Editor);

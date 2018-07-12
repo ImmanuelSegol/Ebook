@@ -1,12 +1,27 @@
 import React from 'react';
 import View from '../../../../Primitives/View';
 import Text from '../../../../Primitives/Text';
-import {AppBar,Toolbar,Button,IconButton} from '@material-ui/core';
-import Menu from '@material-ui/icons/Menu';
-import X from '@material-ui/icons/Close';
+import Taskbar from '../../../Components/Taskbar';
+import {AppBar,Toolbar} from '@material-ui/core';
 import styles from './style';
 
-export default function Taskbar({showSideBar,toggleSideBar}){
+export default function CatalogTaskBar(){
+    return(
+        <Taskbar
+            centerItem
+        />
+    )
+}
+
+
+
+
+
+
+
+/*
+
+    export default function Taskbar({showSideBar,toggleSideBar}){
     return(
         <View style={styles.appBarContainer} color='none'>
           <AppBar position="static" style={styles.appBar}>
@@ -18,3 +33,5 @@ export default function Taskbar({showSideBar,toggleSideBar}){
     );
 }
 
+
+*/
