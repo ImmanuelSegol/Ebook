@@ -7,6 +7,8 @@ import Preview from './Preview';
 import RecipeReviewCard from './SidebarCard';
 import styles from './style';
 
+
+
 export default function Editor({showSidebar,toggleSideBar}){
     return(
         <View style={styles.root} color='none'>
@@ -20,7 +22,6 @@ export default function Editor({showSidebar,toggleSideBar}){
                 <View style={styles.editZone}>
                     <Preview>
                     <object style={{flex:1}} type="text/html" data="https://aframe.glitch.me/" ></object>
-                    <object style={{flex:2}} type="text/html" data="https://aframe.io/examples/showcase/videosphere/" ></object>
                     </Preview>
                     <Sidebar>
                         <RecipeReviewCard/>

@@ -1,7 +1,7 @@
 const styles = {
     root:{
         direction: 'rtl',
-        flex:1,
+        flex:'0 0 auto',
         overflowY: 'scroll',
         flexDirection:'column'
     }

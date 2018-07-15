@@ -15,7 +15,7 @@ import red from '@material-ui/core/colors/red';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import OpenInWindow from '@material-ui/icons/OpenInBrowser';
 
 //Test
 import SubCard from '../SubCard';
@@ -24,9 +24,8 @@ import {Vrlogo,threeSixlogo,Pdflogo} from '../../../../img';
 
 const styles = theme => ({
   card: {
-    maxWidth: 400,
+    maxWidth: 300,
     margin:5,
-    border:'1px solid black'
   },
   media: {
     height: 0,
@@ -64,14 +63,9 @@ class RecipeReviewCard extends React.Component {
       <div>
         <Card className={classes.card}>
           <CardHeader
-            avatar={
-              <Avatar aria-label="Recipe" className={classes.avatar}>
-                ל
-              </Avatar>
-            }
             action={
               <IconButton>
-                <MoreVertIcon />
+                <OpenInWindow/>
               </IconButton>
             }
             title="קורס חממ"
