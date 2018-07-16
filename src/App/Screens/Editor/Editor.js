@@ -20,10 +20,14 @@ function Editor({showSidebar,toggleSideBar,bookTabs,bookSubTabs}){
             />
                 <View style={styles.editZone}>
                     <Preview>
-                        {/*<iframe style={{flex:1}} type="text/html" src="http://localhost:3000/media_content/Aframe/index.html" ></iframe>*/}
-                        <video style={{flex: 1,background: '#fff'}} controls>
+                {/*<iframe style={{flex:1}}type="text/html" src="http://localhost:3000/media_content/Aframe/index.html" ></iframe>*/}
+                        {/*<video style={{width:'100%',height:'100%',background: '#fff'}} controls>
                             <source src="http://localhost:3000/media_content/Video/sample.mp4" type="video/mp4"/>
-                        </video>
+                </video>*/}
+                <object style={{width:'100%',height:'100%'}}>
+                    <param name="movie" value={'http://localhost:3000/media_content/SWF/sample.swf'}/>
+                    <embed style={{width:'100%',height:'100%'}} src='http://localhost:3000/media_content/SWF/sample.swf' ></embed>
+                </object>
                     </Preview>
                     <Sidebar>
                         {
