@@ -6,7 +6,7 @@ import OpenInWindow from '@material-ui/icons/OpenInBrowser';
 import Delete from '@material-ui/icons/Clear';
 import styles from './style';
 
-export default function SubCard({image}){
+export default function SubCard({image,title,content}){
     return(
         <div style={{margin:'5px'}}>
             <Card>
@@ -15,11 +15,11 @@ export default function SubCard({image}){
                     <Delete/>
                 </IconButton>
                 }
-                title={'כותרת'}
+                title={title}
                 />
                 <CardContent>
                     <p>
-                        This is a VR lomda.
+                        {content}
                     </p>
                 </CardContent>
                 <CardActions style={style.actions}>

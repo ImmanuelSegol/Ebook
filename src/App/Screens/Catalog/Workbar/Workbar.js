@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './style';
 import View from '../../../../Primitives/View';
 import Text from '../../../../Primitives/Text';
-import {Tabs,Tab} from '@material-ui/core/';
+import {Tabs,Tab} from '@material-ui/core';
 
 export default class Workbar extends React.Component{
     state = {

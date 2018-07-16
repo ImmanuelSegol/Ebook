@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import View from '../../../../Primitives/View';
 import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
@@ -8,7 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
+//import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
@@ -17,9 +18,9 @@ import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import OpenInWindow from '@material-ui/icons/OpenInBrowser';
 
-//Test
+
 import SubCard from '../SubCard';
-import {Vrlogo,threeSixlogo,Pdflogo} from '../../../../img';  
+//import {Vrlogo,threeSixlogo,Pdflogo} from '../../../../img';  
 
 
 const styles = theme => ({
@@ -57,10 +58,10 @@ class RecipeReviewCard extends React.Component {
   };
 
   render() {
-    const { classes } = this.props;
-
+    const { classes,title,date,details,subTabs,id} = this.props;
+    const {expanded} = this.state;
     return (
-      <div>
+      <View noFlex color='none'>
         <Card className={classes.card}>
           <CardHeader
             action={
@@ -68,8 +69,8 @@ class RecipeReviewCard extends React.Component {
                 <OpenInWindow/>
               </IconButton>
             }
-            title="קורס חממ"
-            subheader="September 14, 2016"
+            title={title}
+            subheader={date}
           />
           <CardMedia
             className={classes.media}
@@ -78,7 +79,7 @@ class RecipeReviewCard extends React.Component {
           />
           <CardContent>
             <Typography component="p">
-              כאן יופיע פירוט על לומדות והתוכן הכלול בהן, כולל כל מידע שהמקס ירצה להוסיף
+              {details}
             </Typography>
           </CardContent>
           <CardActions className={classes.actions} disableActionSpacing>
@@ -90,24 +91,24 @@ class RecipeReviewCard extends React.Component {
             </IconButton>
             <IconButton
               className={classnames(classes.expand, {
-                [classes.expandOpen]: this.state.expanded,
+                [classes.expandOpen]: expanded,
               })}
               onClick={this.handleExpandClick}
-              aria-expanded={this.state.expanded}
+              aria-expanded={expanded}
               aria-label="Show more"
             >
               <ExpandMoreIcon />
             </IconButton>
           </CardActions>
-          <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+          <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
-                <SubCard image={Vrlogo}/>
-                <SubCard image={threeSixlogo}/>
-                <SubCard image={Pdflogo}/>
+                {
+                  subTabs.filter(tab => tab.parentId === id ).map(tab => <SubCard title={tab.title} content={tab.details}/>)
+                }
             </CardContent>
           </Collapse>
         </Card>
-      </div>
+      </View>
     );
   }
 }

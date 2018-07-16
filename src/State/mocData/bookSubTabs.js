@@ -1,10 +1,15 @@
 const bookSubTabs = [
     {
         parentId:1234,
-        
+        id:3333,
+        title:'תת נושא',
+        details: 'זהו תת נושא שמרכיב תת נושאים מהשיעור',
     },
     {
-        parentId:12345,
+        parentId:1234,
+        id:4444,
+        title:'תת נושא',
+        details: 'זהו תת נושא שמרכיב תת נושאים מהשיעור',
     }
 ]
 

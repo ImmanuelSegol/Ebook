@@ -1,5 +1,6 @@
 import * as actionTypes from '../../../../actionConstants';
 const initalState = {
+    canEdit:true,
     sideBarIsVisibal: true,
 }
 

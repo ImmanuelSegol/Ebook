@@ -7,6 +7,8 @@ import Editor from './Editor';
 const mapStateToProps = state => (
     {
         showSidebar: state.editorUi.sideBarIsVisibal,
+        bookTabs: state.mockData.tabs,
+        bookSubTabs: state.mockData.subTab,
     }
 ) 
 const mapDispatchToProps = dispatch => (

@@ -10,7 +10,7 @@ const bookTabs  = [
     {
         parentId:123,
         id: 12345,
-        title:'קורס כל שהוא',
+        title:'קורס כל שהוא שני', 
         date: moment().format('LL'),
         details:'כאן מופיע פירוט על המארז הלומדות והקורס',
     }
