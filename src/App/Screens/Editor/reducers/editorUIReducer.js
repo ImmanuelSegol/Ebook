@@ -1,7 +1,13 @@
 import * as actionTypes from '../../../../actionConstants';
+/*
+    itemsToDisplay:[
+        {type:,link:}
+    ]
+*/
 const initalState = {
     canEdit:true,
     sideBarIsVisibal: true,
+    itemsToDisplay:[]
 }
 
 export default function editorUIReducer(state = initalState,action){

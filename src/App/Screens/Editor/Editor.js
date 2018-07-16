@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import View from '../../../Primitives/View';
 import Taskbar from '../../Components/Taskbar';
+import Optionbar from './Optionbar';
 import {ShareButton,Title,ToggleMenu} from './Taskbar_components';
 import Sidebar from './Sidebar';
 import Preview from './Preview';
@@ -30,6 +31,7 @@ function Editor({showSidebar,toggleSideBar,bookTabs,bookSubTabs}){
                 </object>
                     </Preview>
                     <Sidebar>
+                    <Optionbar/>
                         {
                             bookTabs.map(tab => <RecipeReviewCard 
                                 key={tab.id}

@@ -20,13 +20,13 @@ import OpenInWindow from '@material-ui/icons/OpenInBrowser';
 
 
 import SubCard from '../SubCard';
-//import {Vrlogo,threeSixlogo,Pdflogo} from '../../../../img';  
+import {Vrlogo,threeSixlogo,Pdflogo} from '../../../../img';  
 
 
 const styles = theme => ({
   card: {
     maxWidth: 300,
-    margin:5,
+    margin:15,
   },
   media: {
     height: 0,
@@ -62,7 +62,7 @@ class RecipeReviewCard extends React.Component {
     const {expanded} = this.state;
     return (
       <View noFlex color='none'>
-        <Card className={classes.card}>
+        <Card raised={true} className={classes.card}>
           <CardHeader
             action={
               <IconButton>
@@ -74,7 +74,7 @@ class RecipeReviewCard extends React.Component {
           />
           <CardMedia
             className={classes.media}
-            image="/static/images/cards/paella.jpg"
+            image={Vrlogo}
             title="Contemplative Reptile"
           />
           <CardContent>
