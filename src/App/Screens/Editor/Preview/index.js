@@ -12,6 +12,8 @@ const NothingToRender = () => (
 
 export default function Preview({type,src}){
     let elementToRender;
+    let newStyle = null;
+
     switch (type) {
         case 'aframe':
             elementToRender = <AframeView src={src}/>
@@ -26,12 +28,13 @@ export default function Preview({type,src}){
             elementToRender = <VideoView src={src}/>
             break;
         default:
+            newStyle = {...styles.root,justifyContent: 'center',alignItems:'center'}
             elementToRender = <NothingToRender/>
             break;
     }
 
     return(
-        <View style={styles.root} color="#4a148c">
+        <View style={newStyle ? newStyle : styles.root} color="#4a148c">
             {elementToRender}
         </View>  
     )

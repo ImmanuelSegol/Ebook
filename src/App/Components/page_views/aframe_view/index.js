@@ -2,7 +2,7 @@ import React from 'react';
 
 const style = {
     root:{
-        flex: 1
+        flex: 1,
     }
 }
 

@@ -5,14 +5,20 @@
     <title>360&deg; Image Gallery</title>
     <meta name="description" content="360&deg; Image Gallery - A-Frame">
     <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v3.2.0/dist/aframe-physics-system.min.js"></script>
   </head>
   <body>
-    <a-scene em>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" shadow></a-box>
-      <a-box position="0 1.25 -5" radius="1.25" color="#EF2D5E" shadow></a-sphere>
-      <a-box position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D" shadow></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
-      <a-sky color="#ECECEC"></a-sky>
+    <a-scene embeded physics="debug: true">
+        <a-entity laser-controls oculus-touch-controls="hand: left"></a-entity>
+        <a-entity oculus-touch-controls="hand: right"></a-entity>
+      <a-box dynamic-body position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9" scale="" visible="" material="" geometry=""></a-box>
+      <a-sphere dynamic-body position="0 1.25 -5" radius="1.25" color="#EF2D5E" rotation="" scale="" visible="" material="" geometry=""></a-sphere>
+      <a-cylinder  dynamic-body position="1 2 -3" radius="0.5" height="1.5" color="#FFC65D" rotation="" scale="" visible="" material="" geometry=""></a-cylinder>
+      <a-plane  static-body position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" scale="" visible="" material="" geometry=""></a-plane>
+      <a-dodecahedron color="#B96FD3" position="4 1 -4" rotation="" scale="" visible="" material="" geometry=""></a-dodecahedron>
+      <a-text value="Hello, A-Frame!" color="#111" position="0 2.5 -2" align="center" rotation="" scale="" visible="" text=""></a-text>
+      <a-torus-knot color="#B96FD3" position="-4 1 -4" radius-tubular="0.05" p="7" rotation="" scale="" visible="" material="" geometry=""></a-torus-knot>
+        <a-sky color="#ECECEC"></a-sky>
     </a-scene>
   </body>
 </html>
