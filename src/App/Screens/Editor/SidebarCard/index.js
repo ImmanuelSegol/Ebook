@@ -58,14 +58,16 @@ class RecipeReviewCard extends React.Component {
   };
 
   render() {
-    const { classes,title,date,details,subTabs,id} = this.props;
+    const { classes,title,date,details,subTabs,id,onClickToggleRenderView,type,src} = this.props;
     const {expanded} = this.state;
     return (
       <View noFlex color='none'>
         <Card raised={true} className={classes.card}>
           <CardHeader
             action={
-              <IconButton>
+              <IconButton onClick={() => {
+                onClickToggleRenderView(type,src)
+              }}>
                 <OpenInWindow/>
               </IconButton>
             }

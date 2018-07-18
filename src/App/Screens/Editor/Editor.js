@@ -20,14 +20,14 @@ function Editor({showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,tog
                     showSideBar={showSidebar}/>}
             />
                 <View style={styles.editZone}>
-                    <Preview type={dataToRender.type} src={dataToRender.type}/>
+                    <Preview type={dataToRender.type} src={dataToRender.src}/>
                     <Sidebar>
                     <Optionbar/>
                         {
                             bookTabs.map(tab => <RecipeReviewCard
                                 onClickToggleRenderView = {toggleRenderView} 
                                 type={tab.type}
-                                mediaSrc={tab.link}
+                                src={tab.link}
                                 key={tab.id}
                                 id={tab.id}
                                 title={tab.title} 

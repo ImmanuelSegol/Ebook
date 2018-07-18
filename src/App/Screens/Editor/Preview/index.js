@@ -6,13 +6,12 @@ import {AframeView,PdfView,SwfView,VideoView,} from '../../../Components/page_vi
 
 
 const NothingToRender = () => (
-    <h1>LOADING...</h1>
+    <h1>אין תוכן להציג</h1>
 ) 
 
 
 export default function Preview({type,src}){
     let elementToRender;
-
     switch (type) {
         case 'aframe':
             elementToRender = <AframeView src={src}/>

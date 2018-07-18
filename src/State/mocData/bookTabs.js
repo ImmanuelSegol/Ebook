@@ -15,8 +15,8 @@ const bookTabs  = [
         title:'קורס כל שהוא שני', 
         date: moment().format('LL'),
         details:'כאן מופיע פירוט על המארז הלומדות והקורס',
-        type:'vr',
-        link:'http://localhost:3000/media_content/Aframe/index.html',
+        type:'pdf',
+        link:'http://localhost:3000/media_content/pdf/pdf.pdf',
     }
 ]
 
