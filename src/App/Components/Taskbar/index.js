@@ -17,7 +17,7 @@ export default function Taskbar({leftItem,centerItem,rightItem,style}){
     return(
         <View style={newStyle.appBarContainer} color='none'>
           <AppBar position="static" style={newStyle.appBar}>
-            <Toolbar style={newStyle.appBarContent}>
+            <Toolbar variant="dense" style={newStyle.appBarContent}>
                 {leftItem ? leftItem() : null}
                 {centerItem ? centerItem() : null}
                 {rightItem ? rightItem() : null}

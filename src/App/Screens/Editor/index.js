@@ -9,11 +9,13 @@ const mapStateToProps = state => (
         showSidebar: state.editorUi.sideBarIsVisibal,
         bookTabs: state.mockData.tabs,
         bookSubTabs: state.mockData.subTab,
+        dataToRender: state.editorUi.dataToRender,
     }
 ) 
 const mapDispatchToProps = dispatch => (
     {
         toggleSideBar: () => dispatch(editorActions.cntrlSideBar()),
+        toggleRenderView: (type,src) => dispatch(editorActions.renderMedia(type,src))
     }
 ) 
 

@@ -7,7 +7,10 @@ import * as actionTypes from '../../../../actionConstants';
 const initalState = {
     canEdit:true,
     sideBarIsVisibal: true,
-    itemsToDisplay:[]
+    dataToRender:{
+        type:null,
+        src:null
+    }
 }
 
 export default function editorUIReducer(state = initalState,action){
@@ -16,6 +19,11 @@ export default function editorUIReducer(state = initalState,action){
             return {
                 ...state,
                 sideBarIsVisibal: !state.sideBarIsVisibal
+            }
+        case actionTypes.RENDER_MEDIA:
+            return{
+                ...state,
+                dataToRender: action.payload
             }
         default:
             return state;

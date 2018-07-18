@@ -6,7 +6,17 @@ const cntrlSideBar = () => (
     }
 )
 
+const renderMedia = (type,src) => (
+    {
+        type:actionTypes.RENDER_MEDIA,
+        payload:{
+            type,
+            src,
+        }
+    }
+)
 
 export {
     cntrlSideBar,
+    renderMedia
 }

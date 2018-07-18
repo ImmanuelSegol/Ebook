@@ -1,18 +1,77 @@
 import React from 'react';
-import View from '../../../../Primitives/View';
-import Text from '../../../../Primitives/Text';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import purple from '@material-ui/core/colors/purple';
+import {Paper,Typography} from '@material-ui/core';
+
+import {View,Text} from '../../../../Primitives';
+import Loading from '../Loading/index';    
 
 import styles from './style';
 
-export default function DisplayView({viewState}) {
+const Thing = () => (
+    <Paper style={{margin: '10px',minHeight: '200px'}}>
+                    <Typography variant="headline" component="h3">
+                            This is a sheet of paper.
+                    </Typography>
+                    <Typography component="p">
+                    Paper can be used to build surface or other elements for your application.
+                    </Typography>
+    </Paper>
+)
+
+
+export default function DisplayView({viewState,data={}}) {
     return( 
     <View style={styles.root}>
-        <CircularProgress style={{color: purple[500]}} thickness={7} size={150}/>
-        {viewState === 0 ? <Text>מטעין את המארזים שלך</Text> : null}
-        {viewState === 1 ? <Text>מטעין מארזים משותפים</Text> : null}
-        {viewState === 2 ? <Text>מטעין מארזים ששותפו איתך</Text> : null}
+        {
+            data ?  
+            <View  style={{width: '100%',height: '100%',flex: 1,flexWrap: 'wrap',alignContent: 'flex-start',overflowY: 'scroll'}}>
+                <Thing/>
+                <Thing/>
+                <Thing/>         
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>         
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>                  
+                <Thing/>
+                <Thing/>
+                <Thing/>         
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>                  
+                <Thing/>
+                <Thing/>
+                <Thing/>         
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>                  
+                <Thing/>
+                <Thing/>
+                <Thing/>         
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>
+                <Thing/>                                    
+            </View>
+            : <Loading state={viewState}/>
+        }
     </View>
     )
 }

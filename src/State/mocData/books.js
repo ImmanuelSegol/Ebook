@@ -5,6 +5,12 @@ const books = [
         title:'קורס כל שהוא',
         date: moment().format('LL'),
         details:'כאן מופיע פירוט על המארז הלומדות והקורס',
+    },
+    {
+        id: 567,
+        title:'קורס כל שהוא',
+        date: moment().format('LL'),
+        details:'כאן מופיע פירוט על המארז הלומדות והקורס',
     }
 ]
 

@@ -46,7 +46,7 @@ export default function Login() {
                             <InputLabel htmlFor="name-simple">סיסמא</InputLabel>
                             <Input id="name-simple" value={'*****'} onChange={() => alert('change')} />
                     </FormControl>
-                    <Button variant="contained" style={{backgroundColor:'#38006b',color:'#fff',}}>כנס</Button>
+                    <Button variant="contained" style={{backgroundColor:'#38006b',color:'#fff',}}>התחבר</Button>
                     <Text style={{color:'black', textAlign: 'center', fontSize:'16px'}}><a href="#0">שכחתי סיסמא</a></Text>
                 </View>
             </View>
