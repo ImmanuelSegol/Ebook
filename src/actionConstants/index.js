@@ -3,3 +3,5 @@ export const TOGGLE_SIDEBAR_EDITOR = 'TOGGLE_SIDEBAR_EDITOR';
 export const RENDER_MEDIA = 'RENDER_MEDIA'; 
 //Catalog
 export const TOGGLE_TAB_VIEWS = 'TOGGLE_TAB_VIEWS';
+//Data
+export const ADD_BOOK_TAB = "ADD_BOOK_TAB"; 

@@ -9,7 +9,7 @@ import Preview from './Preview';
 import RecipeReviewCard from './SidebarCard';
 import styles from './style';
 
-function Editor({showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,toggleRenderView}){
+function Editor({showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,toggleRenderView,addEbookTabView}){
     return(
         <View style={styles.root} color='none'>
             <Taskbar 
@@ -22,7 +22,7 @@ function Editor({showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,tog
                 <View style={styles.editZone}>
                     <Preview type={dataToRender.type} src={dataToRender.src}/>
                     <Sidebar toggle={showSidebar}>
-                        <Optionbar/>
+                        <Optionbar addTab={addEbookTabView}/>
                             {
                                 bookTabs.map(tab => <RecipeReviewCard
                                     onClickToggleRenderView = {toggleRenderView} 

@@ -2,7 +2,9 @@ import React from 'react';
 import {Paper,IconButton, Icon} from '@material-ui/core';
 import {View} from '../../../../Primitives';
 import {ClearAll,Add,Save,SupervisorAccount} from '@material-ui/icons';
-import Modal from '../../../Components/modal';
+import {ModalForm} from '../../../Components/modal';
+
+
 const style = {
     margin: '5px',
 };
@@ -34,7 +36,7 @@ export default class OptionCards extends React.Component{
                     <Button icon={<Add/>} onClick={this.openModal}/>
                     <Button icon={<ClearAll/>}/>
                     </Paper>
-                    <Modal isOpen={this.state.isOpen} onClose={this.closeModal}/>
+                    <ModalForm isOpen={this.state.isOpen} onClose={this.closeModal}/>
                 </View>
             )
         }
