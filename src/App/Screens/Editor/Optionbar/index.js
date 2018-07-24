@@ -36,7 +36,7 @@ export default class OptionCards extends React.Component{
                     <Button icon={<Add/>} onClick={this.openModal}/>
                     <Button icon={<ClearAll/>}/>
                     </Paper>
-                    <ModalForm isOpen={this.state.isOpen} onClose={this.closeModal}/>
+                    <ModalForm isOpen={this.state.isOpen} onClose={this.closeModal} addTab={this.props.addTab}/>
                 </View>
             )
         }

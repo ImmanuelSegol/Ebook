@@ -16,7 +16,8 @@ const mapDispatchToProps = dispatch => (
     {
         toggleSideBar: () => dispatch(editorActions.cntrlSideBar()),
         toggleRenderView: (type,src) => dispatch(editorActions.renderMedia(type,src)),
-        addEbookTabView: () => dispatch(editorActions.addEbookTab()),
+        addEbookTab: () => dispatch(editorActions.addEbookTab()),
+        removeEbookTab:id => dispatch(editorActions.removeEbookTab(id)), 
     }
 ) 
 

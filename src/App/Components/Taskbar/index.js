@@ -4,7 +4,7 @@ import View from '../../../Primitives/View';
 import {AppBar,Toolbar} from '@material-ui/core';
 import styles from './style';
 
-export default function Taskbar({leftItem,centerItem,rightItem,style}){
+export default function Taskbar({leftItem,centerItem,rightItem,style,center}){
     let newStyle = {
         ...styles,
     }
@@ -17,7 +17,7 @@ export default function Taskbar({leftItem,centerItem,rightItem,style}){
     return(
         <View style={newStyle.appBarContainer} color='none'>
           <AppBar position="static" style={newStyle.appBar}>
-            <Toolbar variant="dense" style={newStyle.appBarContent}>
+            <Toolbar variant="dense" style={center ? {...newStyle.appBarContent,justifyContent: 'center'} : newStyle.appBarContent}>
                 {leftItem ? leftItem() : null}
                 {centerItem ? centerItem() : null}
                 {rightItem ? rightItem() : null}

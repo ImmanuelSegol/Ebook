@@ -13,8 +13,9 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import red from '@material-ui/core/colors/red';
+
 import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
+import DeleteIcon from '@material-ui/icons/Delete';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import OpenInWindow from '@material-ui/icons/OpenInBrowser';
 
@@ -25,7 +26,7 @@ import {Vrlogo,threeSixlogo,Pdflogo} from '../../../../img';
 
 const styles = theme => ({
   card: {
-    maxWidth: 300,
+    width: 282,
     margin:15,
   },
   media: {
@@ -50,7 +51,7 @@ const styles = theme => ({
   },
 });
 
-class RecipeReviewCard extends React.Component {
+class SideBarCard extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -58,7 +59,7 @@ class RecipeReviewCard extends React.Component {
   };
 
   render() {
-    const { classes,title,date,details,subTabs,id,onClickToggleRenderView,type,src} = this.props;
+    const { classes,title,date,details,subTabs,id,onClickToggleRenderView,type,src,removeEbookTab} = this.props;
     const {expanded} = this.state;
     return (
       <View noFlex color='none'>
@@ -88,8 +89,8 @@ class RecipeReviewCard extends React.Component {
             <IconButton aria-label="Add to favorites">
               <FavoriteIcon />
             </IconButton>
-            <IconButton aria-label="Share">
-              <ShareIcon />
+            <IconButton aria-label="Share" onClick={() => removeEbookTab(id)}>
+              <DeleteIcon />
             </IconButton>
             <IconButton
               className={classnames(classes.expand, {
@@ -105,7 +106,7 @@ class RecipeReviewCard extends React.Component {
           <Collapse in={expanded} timeout="auto" unmountOnExit>
             <CardContent>
                 {
-                  subTabs.filter(tab => tab.parentId === id ).map(tab => <SubCard title={tab.title} content={tab.details}/>)
+                  subTabs.filter(tab => tab.parentId === id ).map((tab,i) => <SubCard key={i + Math.random(1,10)} title={tab.title} content={tab.details}/>)
                 }
             </CardContent>
           </Collapse>
@@ -115,8 +116,17 @@ class RecipeReviewCard extends React.Component {
   }
 }
 
-RecipeReviewCard.propTypes = {
+SideBarCard.propTypes = {
   classes: PropTypes.object.isRequired,
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  details: PropTypes.string.isRequired,
+  subTabs: PropTypes.object.isRequired,
+  id: PropTypes.number.isRequired,
+  onClickToggleRenderView: PropTypes.func.isRequired,
+  type:PropTypes.string.isRequired,
+  src: PropTypes.string.isRequired,
+  removeEbookTab: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles)(RecipeReviewCard);
+export default withStyles(styles)(SideBarCard);

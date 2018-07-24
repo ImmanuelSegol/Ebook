@@ -11,7 +11,7 @@ import styles from './style';
 export default function Catalog() {
     return(
         <View style={styles.root}> 
-            <Taskbar  centerItem={() => <Title title='בלהבלהבלה'/>}/>       
+            <Taskbar center centerItem={() => <Title title='בלהבלהבלה'/>}/>       
             <View style={styles.workZone}>
                 <Workbar/>
                 <DisplayView/>

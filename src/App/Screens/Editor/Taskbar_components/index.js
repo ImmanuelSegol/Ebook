@@ -21,15 +21,15 @@ const ToggleMenu = ({onClick,showSideBar}) => (
     </IconButton>
 );
 
-ShareButton.PropTypes = {
+ShareButton.propTypes = {
     title: PropTypes.string.isRequired,
 }
 
-Title.PropTypes = {
+Title.propTypes = {
     title: PropTypes.string.isRequired,
 }
 
-ToggleMenu.PropTypes = {
+ToggleMenu.propTypes = {
     onClick: PropTypes.func.isRequired,
     showSideBar: PropTypes.bool.isRequired,
 }

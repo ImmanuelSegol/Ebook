@@ -9,11 +9,12 @@ import Preview from './Preview';
 import RecipeReviewCard from './SidebarCard';
 import styles from './style';
 
-function Editor({showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,toggleRenderView,addEbookTabView}){
+function Editor(props){
+    const {showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,toggleRenderView,addEbookTab,removeEbookTab} = props;
     return(
         <View style={styles.root} color='none'>
             <Taskbar 
-                leftItem={() => <ShareButton title='שתף'/>} 
+                leftItem={() => <ShareButton title={'שתף'}/>} 
                 centerItem={() => <Title title='קורס בלהבלהבלה'/>}
                 rightItem={() => <ToggleMenu 
                     onClick={() => toggleSideBar()}
@@ -22,9 +23,10 @@ function Editor({showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,tog
                 <View style={styles.editZone}>
                     <Preview type={dataToRender.type} src={dataToRender.src}/>
                     <Sidebar toggle={showSidebar}>
-                        <Optionbar addTab={addEbookTabView}/>
+                        <Optionbar addTab={addEbookTab}/>
                             {
                                 bookTabs.map(tab => <RecipeReviewCard
+                                    removeEbookTab = {removeEbookTab}
                                     onClickToggleRenderView = {toggleRenderView} 
                                     type={tab.type}
                                     src={tab.link}

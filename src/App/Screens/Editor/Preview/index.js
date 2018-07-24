@@ -41,8 +41,8 @@ export default function Preview({type,src}){
 }
 
 
-
+//Issue her ewith required
 Preview.propTypes = {
-    type: PropTypes.string.isRequired,
-    src: PropTypes.string.isRequired,
+    type: PropTypes.any,
+    src: PropTypes.any,
 }

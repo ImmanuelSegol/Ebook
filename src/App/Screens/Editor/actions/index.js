@@ -1,13 +1,14 @@
 import * as actionTypes from '../../../../actionConstants';
 import moment from 'moment';
+import uuid from 'uuid/v1';
 
-const cntrlSideBar = () => (
+export const cntrlSideBar = () => (
     {
         type: actionTypes.TOGGLE_SIDEBAR_EDITOR
     }
 )
 
-const renderMedia = (type,src) => (
+export const renderMedia = (type,src) => (
     {
         type:actionTypes.RENDER_MEDIA,
         payload:{
@@ -17,12 +18,12 @@ const renderMedia = (type,src) => (
     }
 )
 
-const addEbookTab = () => (
+export const addEbookTab = () => (
     {
         type: actionTypes.ADD_BOOK_TAB,
         payload: {
             parentId:123,
-            id: 1234777,
+            id: uuid(),
             title:'קורס חדש',
             date: moment().format('LL'),
             details:'כאן מופיע פירוט על המארז הלומדות והקורס',
@@ -32,10 +33,10 @@ const addEbookTab = () => (
     }
 )
 
+export const removeEbookTab = (id) => (
+    {
+        type: actionTypes.REMOVE_BOOK_TAB,
+        payload:id
+    }
+)
 
-
-export {
-    cntrlSideBar,
-    renderMedia,
-    addEbookTab,
-}

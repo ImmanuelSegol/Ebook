@@ -10,7 +10,7 @@ const style = {
     }
 }
 
-export function ModalForm({isOpen,onClose}){
+export function ModalForm({isOpen,onClose,addTab}){
     return(
         <Modal open={isOpen} onClose={onClose} center>
                <View col>
@@ -28,7 +28,14 @@ export function ModalForm({isOpen,onClose}){
                             <ModalSelector style={{width: '200px',margin:'20px'}}/>
                         </View>
                         <View>
-                            <Button color='primary' variant='raised'>הוסף</Button>
+                            <Button color='primary' variant='raised' onClick={
+                                () => {
+                                    addTab();
+                                    onClose();
+                                }
+                            }>
+                            הוסף
+                            </Button>
                         </View>
                     </View>
             </View>
