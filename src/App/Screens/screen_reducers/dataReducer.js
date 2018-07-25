@@ -1,7 +1,8 @@
-import {bookTabs,bookSubTabs} from '../../../State/mocData';
+import {books,bookTabs,bookSubTabs} from '../../../State/mocData';
 import * as actionTypes from '../../../actionConstants';
 
 const initalState = {
+    ebooks:books,
     tabs:bookTabs,
     subTab:bookSubTabs
 };
