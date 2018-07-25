@@ -1,5 +1,5 @@
 import React from 'react';
-import {Paper,Typography} from '@material-ui/core';
+import {Card,Typography,Button,CardActions,CardContent} from '@material-ui/core';
 
 import {View,Text} from '../../../../Primitives';
 import Loading from '../Loading/index';    
@@ -7,14 +7,25 @@ import Loading from '../Loading/index';
 import styles from './style';
 
 const Thing = () => (
-    <Paper style={{margin: '10px',minHeight: '200px'}}>
-                    <Typography variant="headline" component="h3">
-                            This is a sheet of paper.
-                    </Typography>
-                    <Typography component="p">
-                    Paper can be used to build surface or other elements for your application.
-                    </Typography>
-    </Paper>
+    <Card style={{maxWidth: '345px',margin:'5px'}}>
+        <CardContent>
+        <Typography gutterBottom variant="headline" component="h2">
+            Lizard
+        </Typography>
+        <Typography component="p">
+            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
+            across all continents except Antarctica
+        </Typography>
+        </CardContent>
+        <CardActions>
+        <Button size="small" color="primary">
+            Share
+        </Button>
+        <Button size="small" color="primary">
+            Learn More
+        </Button>
+        </CardActions>
+  </Card>
 )
 
 
@@ -23,7 +34,7 @@ export default function DisplayView({viewState,data={}}) {
     <View style={styles.root}>
         {
             data ?  
-            <View  style={{width: '100%',height: '100%',flex: 1,flexWrap: 'wrap',alignContent: 'flex-start',overflowY: 'scroll'}}>
+            <View  style={{width: '100%',height: '100%',flex: 1,flexWrap: 'wrap',alignContent: 'flex-start',justifyContent: 'center',overflowY: 'scroll'}}>
                 <Thing/>
                 <Thing/>
                 <Thing/>         
