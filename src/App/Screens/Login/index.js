@@ -24,7 +24,7 @@ const login = {
     zone:{
         flex: 1,
         margin: 50,
-        flexDirection: 'column',
+        alignItems: 'center',
         justifyContent: 'space-between',
     }
 }
@@ -37,17 +37,20 @@ export default function Login() {
                 <View style={login.title}>
                     <Text style={login.titleText}>ברוכים הבאים</Text>
                 </View>
-                <View style={login.zone} color='none'>
-                    <FormControl style={{}}>
+                <View col style={login.zone} color='none'>
+                    <FormControl style={{width: '300px'}}>
                             <InputLabel htmlFor="name-simple">מספפר אישי</InputLabel>
                             <Input id="name-simple" value={'name'} onChange={() => alert('change')} />
                     </FormControl>
-                    <FormControl style={{}}>
+                    <FormControl style={{width: '300px'}}>
                             <InputLabel htmlFor="name-simple">סיסמא</InputLabel>
                             <Input id="name-simple" value={'*****'} onChange={() => alert('change')} />
                     </FormControl>
-                    <Button variant="contained" style={{backgroundColor:'#38006b',color:'#fff',}}>התחבר</Button>
-                    <Text style={{color:'black', textAlign: 'center', fontSize:'16px'}}><a href="#0">שכחתי סיסמא</a></Text>
+                    <Button variant="contained" style={{backgroundColor:'#38006b',color:'#fff',width: '200px'}}>התחבר</Button>
+                    <View style={{width:'200px',justifyContent:'space-around',marginBottom:'-40px'}}>
+                        <Text style={{color:'black', textAlign: 'center', fontSize:'16px'}}><a href="#0">שכחתי סיסמא</a></Text>
+                        <Text style={{color:'black', textAlign: 'center', fontSize:'16px'}}><a href="#0">משתמש חדש</a></Text>
+                    </View>
                 </View>
             </View>
         </View>
