@@ -2,7 +2,8 @@ import React from 'react';
 import {Paper,IconButton, Icon} from '@material-ui/core';
 import {View} from '../../../../Primitives';
 import {ClearAll,Add,Save,SupervisorAccount} from '@material-ui/icons';
-import {ModalForm} from '../../../Components/modal';
+import FormModal from '../../../Components/modal/formModal';
+import ModalContainer from '../../../Components/modal';
 
 
 const style = {
@@ -16,27 +17,21 @@ const Button = ({icon,onClick}) => (
 )
 
 export default class OptionCards extends React.Component{
-        state = {
-            isOpen:false,
-        }
-        openModal = this.openModal.bind(this);
-        closeModal = this.closeModal.bind(this);
-        openModal(){
-            this.setState({isOpen:true});
-        }
-        closeModal(){
-            this.setState({isOpen:false});
-        }
         render(){
+            const {showModal,addTab} = this.props;
             return(
                 <View noFlex color='none'>
                     <Paper style={{ width: 'auto',margin:15,display: 'flex',justifyContent:'space-around',alignItems:'center'}}>
                     <Button icon={<SupervisorAccount/>}/>
                     <Button icon={<Save/>}/>
-                    <Button icon={<Add/>} onClick={this.openModal}/>
+                    <Button icon={<Add/>} onClick={() => showModal({
+                        id:1,
+                        content: <FormModal addTab={addTab}/>
+                    })}/>
                     <Button icon={<ClearAll/>}/>
                     </Paper>
-                    <ModalForm isOpen={this.state.isOpen} onClose={this.closeModal} addTab={this.props.addTab}/>
+                   {/*<ModalForm isOpen={this.state.isOpen} onClose={this.closeModal} addTab={this.props.addTab}/>*/}
+                   <ModalContainer/>
                 </View>
             )
         }

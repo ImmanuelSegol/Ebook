@@ -1,26 +1,27 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {showModal,hideModal} from '../../Screens/modal_actions';
+import * as actions from '../../Screens/modal_actions';
 import ModalTemplate from './modal';
 
-function Modals(props) {
-    const modals = props.modals.map((item,i) => 
-        <ModalTemplate/>
+function Modals({modals,hideModal}) {
+    const modalsToRender = modals.map((modalInfo,i) => <ModalTemplate index={i} hideModal={hideModal} modalInfo={modalInfo}/>)
+    console.log(modals);
+    return (
+        <div>
+            {modalsToRender}
+        </div>
     )
-    return modals;
-
 }
 
 const mapStateToProps = state => (
     {
-        modals: state.modals,
+        modals: state.modals.modals,
     }
 )
 
 const mapDispatchToProps = dispatch => (
     {
-        showModal: obj => dispatch(showModal(obj)),
-        hideModal: obj => dispatch(hideModal(obj)),
+        hideModal: obj => dispatch(actions.hideModal(obj)),
     }
 )
 

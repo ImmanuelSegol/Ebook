@@ -10,7 +10,7 @@ import RecipeReviewCard from './SidebarCard';
 import styles from './style';
 
 function Editor(props){
-    const {showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,toggleRenderView,addEbookTab,removeEbookTab} = props;
+    const {showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,toggleRenderView,addEbookTab,removeEbookTab,showModal,hideModal} = props;
     return(
         <View style={styles.root} color='none'>
             <Taskbar 
@@ -23,7 +23,7 @@ function Editor(props){
                 <View style={styles.editZone}>
                     <Preview type={dataToRender.type} src={dataToRender.src}/>
                     <Sidebar toggle={showSidebar}>
-                        <Optionbar addTab={addEbookTab}/>
+                        <Optionbar addTab={addEbookTab} showModal={showModal} />
                             {
                                 bookTabs.map(tab => <RecipeReviewCard
                                     removeEbookTab = {removeEbookTab}

@@ -5,18 +5,20 @@ import * as actionTypes from '../../../actionConstants';
         content: 
     }
 */
-export const showModal = (obj) => (
-    {
+export const showModal = obj => {
+    alert('show');
+    return{
         type:actionTypes.SHOW_MODAL,
         payload: obj
     }
-);
+};
 
-export const hideModal = (obj) => (
-    {
+export const hideModal = obj => {
+    alert('hide');
+    return{
         type:actionTypes.HIDE_MODAL,
         payload: obj
     }
-);
+};
 
 
