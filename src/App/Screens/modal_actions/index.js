@@ -1,5 +1,10 @@
 import * as actionTypes from '../../../actionConstants';
-
+/*
+    {
+        id:
+        content: 
+    }
+*/
 export const showModal = (obj) => (
     {
         type:actionTypes.SHOW_MODAL,
@@ -13,3 +18,5 @@ export const hideModal = (obj) => (
         payload: obj
     }
 );
+
+
