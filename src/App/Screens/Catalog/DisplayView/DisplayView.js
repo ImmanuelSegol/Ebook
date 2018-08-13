@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import {
     Card,
     Typography,
@@ -15,7 +16,7 @@ import Loading from '../Loading/index';
 
 import styles from './style';
 
-const Thing = () => (
+const Thing = (props) => (
     <Card style={{maxWidth: '340px',margin:'5px',alignSelf: 'flex-start'}}>
         <CardMedia style={{display:'flex',justifyContent: 'center'}}>
             <h1>Some image</h1>
@@ -30,9 +31,9 @@ const Thing = () => (
         </Typography>
         </CardContent>
         <CardActions>
-        <Button size="small" color="primary">
-            View
-        </Button>
+            <Link style={{textDecoration: 'none'}} to="/editor">
+                <Button size="small" color="primary">View</Button>
+            </Link>
         <Button size="small" color="primary">
             edit
         </Button>
@@ -72,8 +73,8 @@ export default function DisplayView({viewState,books}) {
             books ? 
             <View  style={{width: '100%',height: '100%',flex: 1,flexWrap: 'wrap',alignContent: 'flex-start',overflowY: 'scroll'}}>
                 {
-                    books.map(book => (
-                        <Thing />
+                    books.map((book,i) => (
+                        <Thing key={i} bookInfo={book}/>
                     ))
                 }                
             </View>

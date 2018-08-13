@@ -13,7 +13,7 @@ export default function modalReducer(state = initalState, action) {
         case actionTypes.HIDE_MODAL:
             return{
                 ...state,
-                modals: state.modals.filter(item => item.id != action.payload.id)
+                modals: state.modals.filter(item => item.id !== action.payload.id)
             }    
         default:
             return state;

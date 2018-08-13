@@ -1,10 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+//import PropTypes from 'prop-types';
 import style from './style';
-import {Card,CardActions,CardContent,CardMedia,IconButton,Button, CardHeader} from '@material-ui/core';
+//CardMedia
+import {Card,CardActions,CardContent,IconButton,Button, CardHeader} from '@material-ui/core';
 import OpenInWindow from '@material-ui/icons/OpenInBrowser';
 import Delete from '@material-ui/icons/Clear';
-import styles from './style';
+
 
 export default function SubCard({image,title,content}){
     return(

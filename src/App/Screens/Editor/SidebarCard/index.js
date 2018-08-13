@@ -51,7 +51,7 @@ const styles = theme => ({
   },
 });
 
-class SideBarCard extends React.Component {
+class SidebarCard extends React.Component {
   state = { expanded: false };
 
   handleExpandClick = () => {
@@ -116,7 +116,7 @@ class SideBarCard extends React.Component {
   }
 }
 
-SideBarCard.propTypes = {
+SidebarCard.propTypes = {
   classes: PropTypes.object.isRequired,
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
@@ -129,4 +129,4 @@ SideBarCard.propTypes = {
   removeEbookTab: PropTypes.func.isRequired,
 };
 
-export default withStyles(styles)(SideBarCard);
+export default withStyles(styles)(SidebarCard);

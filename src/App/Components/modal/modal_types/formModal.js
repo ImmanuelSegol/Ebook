@@ -1,15 +1,15 @@
 import React from 'react';
-import {Input,Button,Select} from '@material-ui/core';
-import {View} from '../../../Primitives';
-import ModalSelector from '../../Components/modal/modal_components/dropDown'
-
+import {Input,Button} from '@material-ui/core';
+import {View} from '../../../../Primitives';
+import ModalSelector from '../modal_components/dropDown';
+/*
 const style = {
     root:{
         position: 'absolute',
     }
 }
-
-export default function ModalForm({addTab,hideModal}){
+*/
+export default function ModalForm({addTab,hideModal,modalInfo}){
     return(
             <View col>
                 <h2 style={{alignSelf:'center'}}>הוסף לומדה חדשה</h2>
@@ -29,7 +29,8 @@ export default function ModalForm({addTab,hideModal}){
                             <Button color='primary' variant='raised' onClick={
                                 () => {
                                     addTab();
-                                    hideModal();
+                                    console.log(modalInfo);
+                                    //hideModal(modalInfo);
                                 }
                             }>
                             הוסף

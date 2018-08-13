@@ -1,12 +1,18 @@
 import React from 'react';
-import Text from '../../../../Primitives/Text';
+import {Link} from "react-router-dom";
+import {Text,View} from '../../../../Primitives';
 import {Button,IconButton} from '@material-ui/core';
 import Menu from '@material-ui/icons/Menu';
 import X from '@material-ui/icons/Close';
+import ArrowBack from '@material-ui/icons/ArrowBack'
 import PropTypes from 'prop-types';
 
 const ShareButton = ({title}) => (
-    <Button color='inherit'><Text>{title}</Text></Button>
+<View>
+    <Button color='inherit'>
+        <Link to='/catalog' style={{color:'white'}}><ArrowBack/></Link>
+    </Button>
+</View>
 );
 
 const Title = ({title}) => (

@@ -6,11 +6,11 @@ import Optionbar from './Optionbar';
 import {ShareButton,Title,ToggleMenu} from './Taskbar_components';
 import Sidebar from './Sidebar';
 import Preview from './Preview';
-import RecipeReviewCard from './SidebarCard';
+import SidebarCard from './SidebarCard';
 import styles from './style';
 
 function Editor(props){
-    const {showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,toggleRenderView,addEbookTab,removeEbookTab,showModal,hideModal} = props;
+    const {showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,toggleRenderView,addEbookTab,removeEbookTab,showModal,hideModal,modalInfo} = props;
     return(
         <View style={styles.root} color='none'>
             <Taskbar 
@@ -23,9 +23,9 @@ function Editor(props){
                 <View style={styles.editZone}>
                     <Preview type={dataToRender.type} src={dataToRender.src}/>
                     <Sidebar toggle={showSidebar}>
-                        <Optionbar addTab={addEbookTab} showModal={showModal} />
+                        <Optionbar addTab={addEbookTab} showModal={showModal} hideModal={hideModal} modalInfo={modalInfo}/>
                             {
-                                bookTabs.map(tab => <RecipeReviewCard
+                                bookTabs.map(tab => <SidebarCard
                                     removeEbookTab = {removeEbookTab}
                                     onClickToggleRenderView = {toggleRenderView} 
                                     type={tab.type}

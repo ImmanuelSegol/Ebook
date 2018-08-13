@@ -1,8 +1,8 @@
 import React from 'react';
-import {Paper,IconButton, Icon} from '@material-ui/core';
+import {Paper,IconButton} from '@material-ui/core';
 import {View} from '../../../../Primitives';
 import {ClearAll,Add,Save,SupervisorAccount} from '@material-ui/icons';
-import FormModal from '../../../Components/modal/formModal';
+import FormModal from '../../../Components/modal/modal_types/formModal';
 import ModalContainer from '../../../Components/modal';
 
 
@@ -18,7 +18,7 @@ const Button = ({icon,onClick}) => (
 
 export default class OptionCards extends React.Component{
         render(){
-            const {showModal,addTab} = this.props;
+            const {showModal,addTab,hideModal,modalInfo} = this.props;
             return(
                 <View noFlex color='none'>
                     <Paper style={{ width: 'auto',margin:15,display: 'flex',justifyContent:'space-around',alignItems:'center'}}>
@@ -26,7 +26,7 @@ export default class OptionCards extends React.Component{
                     <Button icon={<Save/>}/>
                     <Button icon={<Add/>} onClick={() => showModal({
                         id:1,
-                        content: <FormModal addTab={addTab}/>
+                        content: <FormModal addTab={addTab} hideModal={hideModal} modalInfo={modalInfo}/>
                     })}/>
                     <Button icon={<ClearAll/>}/>
                     </Paper>
