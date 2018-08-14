@@ -4,7 +4,7 @@ import * as actionTypes from '../../../actionConstants';
 const initalState = {
     ebooks:books,
     tabs:bookTabs,
-    subTab:bookSubTabs
+    subTab:bookSubTabs,
 };
 
 export default function dataReducer(state = initalState,action){

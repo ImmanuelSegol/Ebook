@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import {
     Card,
@@ -11,31 +12,35 @@ import {
     Divider
 } from '@material-ui/core';
 
+import * as actions from '../actions';
+
 import {View,Text} from '../../../../Primitives';
 import Loading from '../Loading/index';    
 
 import styles from './style';
 
-const Thing = (props) => (
+const Thing = ({bookInfo,setEbook}) => (
     <Card style={{maxWidth: '340px',margin:'5px',alignSelf: 'flex-start'}}>
         <CardMedia style={{display:'flex',justifyContent: 'center'}}>
             <h1>Some image</h1>
         </CardMedia>
         <CardContent>
         <Typography gutterBottom variant="headline" component="h2">
-            Lizard
+            {bookInfo.title}
         </Typography>
         <Typography component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+            {bookInfo.details}
         </Typography>
         </CardContent>
         <CardActions>
-            <Link style={{textDecoration: 'none'}} to="/editor">
+            <Link style={{textDecoration: 'none'}} to="/editor" onClick={() => setEbook({
+                id:bookInfo.id,
+                title:bookInfo.title
+            })}>
                 <Button size="small" color="primary">View</Button>
             </Link>
         <Button size="small" color="primary">
-            edit
+            Edit
         </Button>
         </CardActions>
   </Card>
@@ -65,7 +70,7 @@ class Menu extends React.Component{
 }
 
 
-export default function DisplayView({viewState,books}) {
+export default function DisplayView({viewState,books,setCurrentEbook}) {
     return( 
     <View style={styles.root}>
         <Menu/>
@@ -73,8 +78,8 @@ export default function DisplayView({viewState,books}) {
             books ? 
             <View  style={{width: '100%',height: '100%',flex: 1,flexWrap: 'wrap',alignContent: 'flex-start',overflowY: 'scroll'}}>
                 {
-                    books.map((book,i) => (
-                        <Thing key={i} bookInfo={book}/>
+                    books.map((book) => (
+                        <Thing key={book.id} bookInfo={book} setEbook={setCurrentEbook}/>
                     ))
                 }                
             </View>
@@ -83,3 +88,4 @@ export default function DisplayView({viewState,books}) {
     </View>
     )
 }
+

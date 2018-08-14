@@ -1,6 +1,7 @@
 import * as actionTypes from '../../../../actionConstants';
 
 const initalState = {
+    currentEbook:null,
     tabToRender: 0,
 }
 export default function catalogUiReducer(state = initalState,action){
@@ -10,6 +11,11 @@ export default function catalogUiReducer(state = initalState,action){
             ...state,
             tabToRender: action.payload
         };
+    case actionTypes.SET_CURRENT_EBOOK:
+        return{
+            ...state,
+            currentEbook: action.payload,
+        }
         default:
             return state;
     }

@@ -11,6 +11,7 @@ const mapStateToProps = state => (
         bookSubTabs: state.mockData.subTab,
         dataToRender: state.editorUi.dataToRender,
         modalInfo: state.modals.modals[0],
+        currentEbook: state.catalogUi.currentEbook,
     }
 ) 
 const mapDispatchToProps = dispatch => (

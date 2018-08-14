@@ -10,12 +10,24 @@ import SidebarCard from './SidebarCard';
 import styles from './style';
 
 function Editor(props){
-    const {showSidebar,toggleSideBar,bookTabs,bookSubTabs,dataToRender,toggleRenderView,addEbookTab,removeEbookTab,showModal,hideModal,modalInfo} = props;
+    const {showSidebar,
+        toggleSideBar,
+        bookTabs,
+        bookSubTabs,
+        dataToRender,
+        toggleRenderView,
+        addEbookTab,
+        removeEbookTab,
+        showModal,
+        hideModal,
+        modalInfo,
+        currentEbook,
+    } = props;
     return(
-        <View style={styles.root} color='none'>
+        currentEbook ? <View style={styles.root} color='none'>
             <Taskbar 
                 leftItem={() => <ShareButton title={'שתף'}/>} 
-                centerItem={() => <Title title='קורס בלהבלהבלה'/>}
+                centerItem={() => <Title title={currentEbook.title}/>}
                 rightItem={() => <ToggleMenu 
                     onClick={() => toggleSideBar()}
                     showSideBar={showSidebar}/>}
@@ -41,7 +53,7 @@ function Editor(props){
                             }
                     </Sidebar>
                 </View>
-        </View>
+        </View> : <div onClick={() => toggleSideBar()}>sad</div>
     )
 }
 

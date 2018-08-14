@@ -7,3 +7,10 @@ export const toggleTab = id => (
     }
 )
 
+
+export const currentEbook = id => (
+    {
+        type:actionTypes.SET_CURRENT_EBOOK,
+        payload: id
+    }
+)

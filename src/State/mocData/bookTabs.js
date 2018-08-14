@@ -11,6 +11,15 @@ const bookTabs  = [
     },
     {
         parentId:123,
+        id: 123456,
+        title:'קורס כל שהוא שני', 
+        date: moment().format('LL'),
+        details:'כאן מופיע פירוט על המארז הלומדות והקורס',
+        type:'pdf',
+        link:'http://localhost:3000/media_content/pdf/pdf.pdf',
+    },
+    {
+        parentId:567,
         id: 12345,
         title:'קורס כל שהוא שני', 
         date: moment().format('LL'),
