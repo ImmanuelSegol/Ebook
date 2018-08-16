@@ -15,6 +15,7 @@ export default function Catalog() {
             <Taskbar center centerItem={() => <Title title='בלהבלהבלה'/>}/>       
             <View style={styles.workZone}>
                 <Workbar/>
+                {/*
                 <View style={{height:'auto'}}>
                 <Chip
                     key={1}
@@ -41,6 +42,7 @@ export default function Catalog() {
                     style={{margin:'5px'}}
                 />
                 </View>
+                */}
                 <DisplayView/>
             </View>
         </View>

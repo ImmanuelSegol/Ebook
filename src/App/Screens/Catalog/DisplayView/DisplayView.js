@@ -76,16 +76,29 @@ export default function DisplayView({viewState,books,setCurrentEbook}) {
         <Menu/>
         {
             books ? 
-            <View  style={{width: '100%',height: '100%',flex: 1,flexWrap: 'wrap',alignContent: 'flex-start',overflowY: 'scroll'}}>
-                {
-                    books.map((book) => (
-                        <Thing key={book.id} bookInfo={book} setEbook={setCurrentEbook}/>
-                    ))
-                }                
+            <View  style={{width: '100%',height: '100%',flex: 1}}>
+                    <View style={{flex:'1 1 20%'}}>
+
+                    </View>
+                    <View col style={{flex:'1 1 60%',minHeight:'100%',backgroundColor:'white',overflowY: 'scroll'}}>
+                           
+                    </View>
+                    <View style={{flex:'1 1 20%'}}>
+                
+                    </View>
             </View>
             : <Loading state={viewState}/>
         }
     </View>
     )
 }
+
+
+/*
+                    {
+                    books.map((book) => (
+                        <Thing key={book.id} bookInfo={book} setEbook={setCurrentEbook}/>
+                    ))
+                }                
+*/
 

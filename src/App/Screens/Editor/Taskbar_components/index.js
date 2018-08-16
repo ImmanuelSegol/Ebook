@@ -16,7 +16,7 @@ const ShareButton = ({title}) => (
 );
 
 const Title = ({title}) => (
-    <Text style={{fontSize: 32}}>{title}</Text>
+    <Text style={{fontSize: 32,padding:12}}>{title}</Text>
 );
 
 const ToggleMenu = ({onClick,showSideBar}) => (
