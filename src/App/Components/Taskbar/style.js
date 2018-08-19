@@ -4,6 +4,7 @@ const styles = {
       },
       appBar:{
         backgroundColor:'#12005e',
+        zIndex: 10,
       },
       appBarContent:{
         display:'flex',

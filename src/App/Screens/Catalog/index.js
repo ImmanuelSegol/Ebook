@@ -14,35 +14,6 @@ export default function Catalog() {
         <View style={styles.root}> 
             <Taskbar center centerItem={() => <Title title='בלהבלהבלה'/>}/>       
             <View style={styles.workZone}>
-                <Workbar/>
-                {/*
-                <View style={{height:'auto'}}>
-                <Chip
-                    key={1}
-                    label={"F-16"}
-                    onDelete={() => alert('bye')}
-                    style={{margin:'5px'}}
-                />
-                <Chip
-                    key={1}
-                    label={"דרג א"}
-                    onDelete={() => alert('bye')}
-                    style={{margin:'5px'}}
-                />
-                <Chip
-                    key={1}
-                    label={"some thing else"}
-                    onDelete={() => alert('bye')}
-                    style={{margin:'5px'}}
-                />
-                <Chip
-                    key={1}
-                    label={"random"}
-                    onDelete={() => alert('bye')}
-                    style={{margin:'5px'}}
-                />
-                </View>
-                */}
                 <DisplayView/>
             </View>
         </View>

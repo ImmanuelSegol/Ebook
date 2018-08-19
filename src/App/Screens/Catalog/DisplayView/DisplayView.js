@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import Sidebar from '../../../Components/Sidebar';
 import {Link} from 'react-router-dom';
 import {
     Card,
@@ -56,9 +57,9 @@ class Menu extends React.Component{
     }
     render(){
         return(
-            <Drawer anchor='right' open={this.state.isOpen} onClose={() => alert('Close')}>
+            <Drawer style={{zIndex: 0}} anchor='right' variant='permanent' open={this.state.isOpen} onClose={() => alert('Close')}>
                 <View col>
-                    <h1>Hello</h1>
+                    <h1></h1>
                     <Divider/>
                     <h1>Hello</h1>
                     <Divider/>
@@ -70,22 +71,14 @@ class Menu extends React.Component{
 }
 
 
-export default function DisplayView({viewState,books,setCurrentEbook}) {
+export default function DisplayView({viewState,books,showSidebar,setCurrentEbook}) {
     return( 
     <View style={styles.root}>
-        <Menu/>
         {
             books ? 
-            <View  style={{width: '100%',height: '100%',flex: 1}}>
-                    <View style={{flex:'1 1 20%'}}>
-
-                    </View>
-                    <View col style={{flex:'1 1 60%',minHeight:'100%',backgroundColor:'white',overflowY: 'scroll'}}>
-                           
-                    </View>
-                    <View style={{flex:'1 1 20%'}}>
-                
-                    </View>
+            <View style={{width: '100%',height: '100%',flex: 1}}>
+                    <View></View>
+                    <Sidebar toggle={showSidebar}></Sidebar>
             </View>
             : <Loading state={viewState}/>
         }

@@ -4,7 +4,7 @@ import View from '../../../Primitives/View';
 import Taskbar from '../../Components/Taskbar';
 import Optionbar from './Optionbar';
 import {ShareButton,Title,ToggleMenu} from './Taskbar_components';
-import Sidebar from './Sidebar';
+import Sidebar from '../../Components/Sidebar';
 import Preview from './Preview';
 import SidebarCard from './SidebarCard';
 import styles from './style';
